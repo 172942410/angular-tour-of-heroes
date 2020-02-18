@@ -1,0 +1,42 @@
+<!-- <div *ngIf="selectedHero">
+<h2>{{selectedHero.name | uppercase}} 详情</h2>
+<div><span>id:</span> {{selectedHero.id}}</div>
+<div><span>名字：</span>{{selectedHero.name}}</div>
+<div><label>名字:
+    <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+</label></div>
+
+</div> -->
+
+<h2>英雄列表</h2>
+<ul class="heroes">
+    <li  *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+</li>
+</ul>
+
+
+<div>
+    <label>英雄名字:
+      <input #heroName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(heroName.value); heroName.value=''">
+      添加
+    </button>
+  </div>
+
+<!-- <h2>英雄列表</h2>
+<ul class="heroes">
+    <li  *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero" 
+    (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+</li>
+</ul>
+<app-hero-detail [heroDe]="selectedHero">
+</app-hero-detail> -->

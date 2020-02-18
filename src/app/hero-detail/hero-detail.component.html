@@ -1,0 +1,10 @@
+<div *ngIf="heroDe">
+    <h2>{{heroDe.name | uppercase}} 详情</h2>
+    <div><span>id:</span> {{heroDe.id}}</div>
+    <div><span>名字：</span>{{heroDe.name}}</div>
+    <div><label>名字:
+        <input [(ngModel)]="heroDe.name" placeholder="name"/>
+    </label></div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+    </div>
